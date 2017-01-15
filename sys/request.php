@@ -45,6 +45,10 @@ class RequestClass
      * @var string Описание браузера пользователя
      */
     public $agent = '';
+	
+    public $referer = '';
+	
+    public $ip = '';
 
     /**
      * @var string Полный (физический) путь к корню сайта, от корневой директории сервера
@@ -119,7 +123,8 @@ class RequestClass
      * @var bool Использовалась ли csrf защита на страницах
      */
     public $csrf = false;
-
+	
+	
     /**
      * Инициализация данных запроса
      */
@@ -152,6 +157,14 @@ class RequestClass
 		else:	
 			$this->agent = $_SERVER['HTTP_USER_AGENT'];
 		endif;
+		if(!isset($_SERVER['HTTP_REFERER'])):
+			$this->referer = '';
+		else:	
+			$this->referer = $_SERVER['HTTP_REFERER'];
+		endif;
+		
+		$this->ip = $_SERVER['REMOTE_ADDR'];
+		
         $this->method = $_SERVER['REQUEST_METHOD'];
         $this->path = $_SERVER['DOCUMENT_ROOT'];
         $script = $_SERVER['SCRIPT_NAME'];

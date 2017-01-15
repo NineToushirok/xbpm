@@ -1,12 +1,18 @@
 <?
 // System settings 
 $timeZone = 'Europe/Kiev';
-$timeExecution = 0;
-$timeSession = 31536000;
+$timeExecution = 30;
+$sessionPath = './session';
+
+// Security settings 
 $salt = 'cdvr434essdfarQ@DCcwe';
-$title = 'TryTeex';
-$version = '0.0.1';
+
+// Site settings 
 $view = 'default';
+
+$title = 'XBPM';
+$version = '0.0.1';
+// DB settings 
 $dbhost = '';
 $dbport = '';
 $dbuser = '';

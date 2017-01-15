@@ -50,7 +50,7 @@ class ActionClass
 		$this->request = self::$_request;
 		if(is_null(self::$_session)) {
 			require_once __DIR__.'/session.php';
-			self::$_session = new SessionClass($this->request);
+			self::$_session = new SessionClass($this->config, $this->request);
 		}
 
 		$this->session = self::$_session;
